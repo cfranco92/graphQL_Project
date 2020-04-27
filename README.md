@@ -16,17 +16,17 @@ The Schema is the base of an API in GraphQL, it is in charge of describing all t
 
 For the creation of this project we will use a tool called npx, for this you must first install it with the command:
 ```
-npm i -g npx
+$ npm i -g npx
 ```
 
 Once installed, inside the folder of our project we will run the following command:
 ```
-npx license mit> LICENSE && npx gitignore node && git init && npm init -y
+$ npx license mit> LICENSE && npx gitignore node && git init && npm init -y
 ```
 
 Since the command finishes running it is time to add the GraphQL dependency to our project:
 ```
-npm i graphql
+$ npm i graphql
 ```
 
 Within GraphQL we have different types of scalar data:
@@ -43,3 +43,14 @@ https://graphql.org/learn/queries/
 A query allows executing a request to the API, inside a query you must indicate the query you want to execute and the fields you want to obtain. GraphQL will return the information you requested inside the data object.
 
 The result of your request will not be executed in a magical way, for this you must define the resolvers object, this object will contain a property of the same name as the query that is going to be resolved or executed.
+
+# Serving the API on the web
+Our API works through the command line, but we need it to work within the web, for this we need the dependencies of express and a GraphQL middleware, we will install it with the following command:
+```
+$ npm i express express-graphql
+```
+
+To avoid the process of stopping our server every time we execute a new change we are going to use the development dependency Nodemon:
+```
+$ npm i nodemon -D
+```

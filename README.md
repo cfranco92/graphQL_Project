@@ -35,3 +35,11 @@ Within GraphQL we have different types of scalar data:
 * Float
 * Boolean
 * ID
+
+# Queries and resolves
+```https
+https://graphql.org/learn/queries/
+```
+A query allows executing a request to the API, inside a query you must indicate the query you want to execute and the fields you want to obtain. GraphQL will return the information you requested inside the data object.
+
+The result of your request will not be executed in a magical way, for this you must define the resolvers object, this object will contain a property of the same name as the query that is going to be resolved or executed.

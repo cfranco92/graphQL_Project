@@ -54,3 +54,23 @@ To avoid the process of stopping our server every time we execute a new change w
 ```
 $ npm i nodemon -D
 ```
+
+# Custom types
+For this project we're going to follow the Standar styles standard, to install it we run the following command:
+```
+$ npm i standard -D
+```
+
+GraphQL allows us to configure our own data types, these must have the following syntax:
+```javascript
+type<Type name> {
+    Property: Data type
+}
+```
+
+Within our data types we can configure a field of a types as mandatory with the sign "!", being for example:
+```javascript
+type Course {
+    title: String!
+}
+```

@@ -74,3 +74,15 @@ type Course {
     title: String!
 }
 ```
+
+# Arguments
+We are going to install a new dependency to make working with GraphQL easier, we are going to run the following command:
+```
+$ npm i graphql-tools
+```
+
+We can pass arguments with different types of information within the requests that we make in GraphQL, its syntax would be as follows:
+```javascript
+QueryName (field: type): type
+```
+Within the solve the request arguments would be passed as the second parameter, the first is root and the second is args.

@@ -86,3 +86,11 @@ We can pass arguments with different types of information within the requests th
 QueryName (field: type): type
 ```
 Within the solve the request arguments would be passed as the second parameter, the first is root and the second is args.
+
+# Database configuration
+At the moment our API handles pure static information, we are going to change this by passing the information to a database, in this case we will use MongoDB.
+
+To connect we will use mongoose, which must be installed with the following command:
+```
+$ npm i mongoose
+```

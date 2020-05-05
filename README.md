@@ -94,3 +94,15 @@ To connect we will use mongoose, which must be installed with the following comm
 ```
 $ npm i mongodb
 ```
+
+# Mutations and inputs
+We have already seen how to query information through GraphQL, but in an API you will also need to send information to be stored, within GraphQL this is possible thanks to the mutation specification.
+```https
+https://graphql.org/learn/queries/#mutations
+```
+A mutation will require an input type field that are like templates that will indicate what fields are necessary to insert or modify information.
+
+The syntax of a mutation is as follows:
+```javascript
+mutationName (input: InputType): type
+```

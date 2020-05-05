@@ -92,5 +92,5 @@ At the moment our API handles pure static information, we are going to change th
 
 To connect we will use mongoose, which must be installed with the following command:
 ```
-$ npm i mongoose
+$ npm i mongodb
 ```

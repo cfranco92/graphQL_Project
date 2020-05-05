@@ -19,7 +19,7 @@ const typeDefs = readFileSync(
 const schema = makeExecutableSchema({ typeDefs, resolvers })
 
 const db = require('./lib/db');
-db(config.dbUrl);
+db(config.dbUrl);;
 
 app.use('/api', gqlMiddleware({
   schema: schema,

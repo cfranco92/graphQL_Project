@@ -112,3 +112,6 @@ We connect nested data which we can solve in the following process.
 
 # Solve of types
 GraphQL requires a resolver for the parent data type and a function for the nested type field in order to extract its information.
+
+# Errors
+If an error occurs when making a GraphQL request, it will return an object called errors that will contain the error information and its message. We can configure the message that returns to the user simply with a function that throws an error with the message that we want.

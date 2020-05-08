@@ -106,3 +106,9 @@ The syntax of a mutation is as follows:
 ```javascript
 mutationName (input: InputType): type
 ```
+
+# Nested types
+We connect nested data which we can solve in the following process.
+
+# Solve of types
+GraphQL requires a resolver for the parent data type and a function for the nested type field in order to extract its information.

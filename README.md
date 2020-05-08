@@ -115,3 +115,46 @@ GraphQL requires a resolver for the parent data type and a function for the nest
 
 # Errors
 If an error occurs when making a GraphQL request, it will return an object called errors that will contain the error information and its message. We can configure the message that returns to the user simply with a function that throws an error with the message that we want.
+
+# Aliases & fragments 
+```https
+https://graphql.github.io/learn/queries/#aliases
+```
+Within GraphQL we can run more than one request at a time and name them differently in order to identify them, this is possible thanks to Aliases or simply Aliases.
+
+The alias syntax is quite simple:
+```graphql
+Nickname: Datatype (argument: type) {
+   data
+}
+```
+In addition to Aliases, we can group fields to be reused in different requests thanks to Fragments.
+
+Example:
+```graphql
+{
+  AllCourses: getCourses{
+    ...CourseFields
+  }
+
+  Course1: getCourse(id: "5cb4b8ce75f954a0585f7be2"){
+    ...CourseFields
+    teacher
+  }
+
+  Course2: getCourse(id: "5cb4b8ce75f954a0585f7be4"){
+    ...CourseFields
+    topic
+  }
+}
+
+fragment CourseFields on Course {
+  _id
+  title
+  description
+  people {
+    _id
+    name
+  }
+}
+```

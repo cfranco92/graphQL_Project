@@ -158,3 +158,51 @@ fragment CourseFields on Course {
   }
 }
 ```
+
+# Variables
+We can use variables within the requests we make to GraphQL simply by defining them with the following syntax:
+```javascript
+$name: type
+```
+Documentation:
+```https
+https://graphql.github.io/learn/queries/#variables
+```
+## Mutation example:
+```graphql
+mutation AddPersonToCourse2 ($course: ID!, $person: person){
+  addPeople(courseID: $course, personID: $person) {
+    _id
+    title
+  }
+}
+```
+Requires a json object like:
+```json
+  {
+    "course": "5cb4b8ce75f954a0585f7be3",
+    "person": "5cb5dafca9684593ea74b2b5"
+  }
+```
+
+## Query example:
+```
+```graphql
+query GetCourse2 ($course: ID!) {
+  getCourse(id: $course){
+   _id
+    title
+    people{
+      _id
+      name
+    }
+  }
+}
+```
+Requires a json object like:
+
+```json
+{
+  "course": "5cb4b8ce75f954a0585f7be3"
+}
+```

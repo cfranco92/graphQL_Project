@@ -206,3 +206,32 @@ Requires a json object like:
   "course": "5cb4b8ce75f954a0585f7be3"
 }
 ```
+
+# Enums
+Enums or enumeration types are scalar data types whose values are configurable. If we define a data type as enum, its possible values will only be those that are among those defined in the enum.
+
+Documentation:
+```https
+https://graphql.github.io/learn/schema/#enumeration-types
+```
+
+```graphql
+  mutation CreateNewCourse($createinput: CourseInput!) {
+    createCourse(input: $createinput) {
+      _id
+      title
+    }
+  } 
+```
+Requires a json object like: 
+```json
+{
+  "createinput": {
+    "title": "My title 5",
+    "teacher": "Teacher 5",
+    "description": "Example course 5",
+    "topic": "Programing",
+    "level": "beginner"
+  }
+}
+```

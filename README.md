@@ -235,3 +235,42 @@ Requires a json object like:
   }
 }
 ```
+
+# Interfaces - Monitor Type
+Interfaces are very important and useful when we encounter similar data types. An interface allows us to define a type of parent data that, using the word implements, will implement the fields it has defined within the type of data that we want.
+
+## Mutation example
+```graphql
+mutation createNewMonitor ($monitorinput: PersonInput!) {
+  createPerson(input: $monitorinput) {
+    _id
+    name
+  }
+}
+```
+```json
+{
+  "monitorinput": {
+    "name": "Monitor 1",
+    "email": "monitor1@gmail.com",
+    "phone": "3004442020"
+  }
+}
+```
+
+## Query with fragments example
+```graphql
+{
+  getPeople {
+    _id
+    name
+    email
+    ... on Monitor {
+      phone
+    }
+    ... on Student {
+      avatar
+    }
+  }
+}
+```

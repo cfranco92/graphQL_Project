@@ -274,3 +274,42 @@ mutation createNewMonitor ($monitorinput: PersonInput!) {
   }
 }
 ```
+
+# Directives
+Directives are an instruction that allows us to add conditionals to our requests. We can dynamically modify our query simply by adding:
+## @include
+```graphql
+query getPeopleData($monitor: Boolean!, $avatar: Boolean!) {
+  getPeople {
+    _id
+    name
+    ... on Monitor @include(if: $monitor){
+      phone
+    }
+    ... on Student @include(if: $avatar){
+      avatar
+      email
+    }
+  }
+}
+```
+```json
+{
+  "monitor": false,
+  "avatar": true
+}
+```
+
+## @deprecated
+Those who consume the API are told that a certain field will no longer be available:
+```graphql
+type Course {
+    _id: ID!
+    title: String!
+    teacher: String
+    description: String!
+    topic: String @deprecated
+    people: [Student]
+    level: Level
+}
+```

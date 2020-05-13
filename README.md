@@ -319,6 +319,10 @@ type Course {
 ```
 
 # Unions
+Documentation:
+```https
+https://graphql.github.io/learn/schema/#union-types
+```
 Unions allows you to group several custom types regardless of whether they have something in common, their syntax is as follows:
 ```graphql
 union SearchResult = CustomType1 | CustomType2 | CustomType3
@@ -330,4 +334,10 @@ At the time of performing a query that returns a union we can identify the data 
 Example with courses:
 ```javascript
 db.courses.createIndex({"$**": "text"})
+```
+
+# Preparing API for production
+Install cors:
+```terminal
+$ npm i cors
 ```

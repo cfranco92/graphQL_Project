@@ -3,5 +3,6 @@ module.exports = {
   port: process.env.PORT || 3000,
   host: process.env.HOST || 'http://localhost',
   publicRoute: process.env.PUBLIC_ROUTE || '/app',
-  filesRoute: process.env.FILES_ROUTE || 'files'
+  filesRoute: process.env.FILES_ROUTE || 'files',
+  graphiqldev: process.env.NODE_ENV !== 'production'
 }

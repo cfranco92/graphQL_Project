@@ -276,6 +276,10 @@ mutation createNewMonitor ($monitorinput: PersonInput!) {
 ```
 
 # Directives
+Documentation:
+```https
+https://graphql.github.io/learn/queries/#directives
+```
 Directives are an instruction that allows us to add conditionals to our requests. We can dynamically modify our query simply by adding:
 ## @include
 ```graphql
@@ -312,4 +316,18 @@ type Course {
     people: [Student]
     level: Level
 }
+```
+
+# Unions
+Unions allows you to group several custom types regardless of whether they have something in common, their syntax is as follows:
+```graphql
+union SearchResult = CustomType1 | CustomType2 | CustomType3
+```
+
+At the time of performing a query that returns a union we can identify the data type by requesting the __typename field.
+
+## Create index in MongoDB
+Example with courses:
+```javascript
+db.courses.createIndex({"$**": "text"})
 ```

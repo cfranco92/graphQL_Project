@@ -337,7 +337,43 @@ db.courses.createIndex({"$**": "text"})
 ```
 
 # Preparing API for production
-Install cors:
+In order for our API to be accessible from anywhere we must add the cors middleware to express, we must first install it with the following command:
 ```terminal
 $ npm i cors
 ```
+
+Documentation:
+```https
+https://www.npmjs.com/package/cors#configuring-cors-w-dynamic-origin
+```
+
+# GraphQL clients
+* FetchQl: It has a configuration object where all the requirements that a query needs are entered.
+  ```https
+    https://www.npmjs.com/package/fetchql
+  ```
+
+* Graphql-request: It can be used both in node and in a front application. It is the easiest to use.
+  ```https
+    https://www.npmjs.com/package/graphql-request
+  ```
+
+* Apollo Client: In a very complete client, it has the same uses as graphql-request, but it can handle query cache, use of promises, among others.
+  ```https
+    https://www.npmjs.com/package/apollo-client
+  ```
+
+* Relay: It is a client oriented to integrate the front. It is used by Facebook in an official way to connect with graphql.
+  ```https
+    https://relay.dev/
+  ```
+
+* Vue Apollo: 
+  ```https
+    https://apollo.vuejs.org/
+  ```
+
+* Angular Apollo: 
+  ```https
+    https://www.apollographql.com/docs/angular/
+  ```
